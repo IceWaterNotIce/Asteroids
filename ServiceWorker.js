@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-Asteroids-Unity-1.0";
 const contentToCache = [
     "Build/Web.loader.js",
-    "Build/0b92ae48513d70ae238628b29238359d.js",
-    "Build/7587886acf6f21166f50e79d284b59c7.data",
-    "Build/acca1bf6dec34518fc81531e264c17ce.wasm",
+    "Build/9556dadfd612f6acbacf9df9d1f5a83c.js",
+    "Build/cacc2b3833994fe047c9cd015538d848.data",
+    "Build/2dba92c285fe3343cab606f29caf66bf.wasm",
     "TemplateData/style.css"
 
 ];
