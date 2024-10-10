@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab);
             bullet.transform.position = transform.position;
             bullet.transform.rotation = transform.rotation;
+            bullet.GetComponent<BulletController>().IncreaseSpeed(speed);
+            Debug.Log(bullet);
         }
 
     }

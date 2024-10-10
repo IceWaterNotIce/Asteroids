@@ -6,12 +6,12 @@ public class BulletController : MonoBehaviour
 {
     public float speed;
     public float lifeTime; // seconds
-
+    public LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -25,16 +25,23 @@ public class BulletController : MonoBehaviour
         }
 
         // if bullet touches a stone, destroy both
-        GameObject[] stones = GameObject.FindGameObjectsWithTag("Stone");
-        foreach (GameObject stone in stones)
+        GameObject[] asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
+        foreach (GameObject asteroid in asteroids)
         {
-            if (Vector3.Distance(transform.position, stone.transform.position) < 0.5)
+            if (Vector3.Distance(transform.position, asteroid.transform.position) < 0.5)
             {
-                Destroy(stone);
+                Destroy(asteroid);
                 Destroy(gameObject);
+                levelManager.AddScore(1);
             }
         }
         
+
+    }
+
+    public void IncreaseSpeed(float increment)
+    {
+        speed += increment; // Increase speed safely
 
     }
 }
